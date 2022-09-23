@@ -2,9 +2,8 @@
 # You have been asked to write a function that supplies the "reverse lookup" name for the person associated with a phone number.
 # This means that given a phone number, you get the name of the person
 # who is registered with that phone number. Write this function using parallel lists.
-
-
 from typing import List
+
 
 def reverse_lookup_lists(phone_num: str, phone_numbers: List[str],
                          names: List[str]) -> str:
@@ -24,3 +23,16 @@ def reverse_lookup_lists(phone_num: str, phone_numbers: List[str],
         'Louis Riel', 'Canoe Head', 'Tim Horton'])
     'Canoe Head'
     """
+    for m in range(len(phone_numbers)):
+        #print(len(phone_numbers))
+        #print(phone_numbers[m])
+        if phone_num == phone_numbers[m]:
+            return names[m]
+
+    return ""
+
+print(reverse_lookup_lists('416-553-6543', ['416-555-3498', \
+                                                '647-555-9812', '416-555-6543', '905-555-6681'], ['John A. Macdonald', \
+                                                                                                  'Louis Riel',
+                                                                                                  'Canoe Head',
+                                                                                                  'Tim Horton']))
