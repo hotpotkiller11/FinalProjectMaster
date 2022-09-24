@@ -15,6 +15,9 @@ def check_password(passwd: str) -> bool:
     else :
         if passwd.isupper() :
             return False
+        elif passwd.islower():
+            return False
+
         else :
             digit = 0
             for chr in passwd :

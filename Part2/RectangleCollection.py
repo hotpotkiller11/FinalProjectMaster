@@ -47,7 +47,7 @@ class RectangleCollection:
         []
         """
         self.rectangles = []
-        
+
     def add_rectangle(self, rectangle: "Rectangle") -> None:
         """
         >>> rc = RectangleCollection()
@@ -56,7 +56,8 @@ class RectangleCollection:
         >>> rc.rectangles
         [r1]
         """
-        
+        self.rectangles.append(rectangle)
+
         # your code goes here
 
     def get_same_area_rects(self, area: int) -> List["Rectangle"]:
@@ -71,9 +72,16 @@ class RectangleCollection:
         >>> rc.get_same_area_rects(4)
         [r2,r3]
         """
-        
+
         results = []
-        
+        for i in range(len(self.rectangles)):
+            if (self.rectangles[i].get_area() == area):
+                results.append(self.rectangles[i])
+
         # your code goes here.
-        
+
         return results
+
+
+
+
